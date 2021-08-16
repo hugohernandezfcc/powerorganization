@@ -1,0 +1,148 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
+
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+    
+        <input type="hidden" name="oid" value="00D5e000001Q7Eb"/>
+        <input type="hidden" name="retURL" value="https://poc-hdhm-developer-edition.na162.force.com/jafra"/>
+        
+        <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+        <!--  these lines if you wish to test in debug mode.                          -->
+        <!--  <input type="hidden" name="debug" value=1>                              -->
+        <!--  <input type="hidden" name="debugEmail" value="hugodhm@icloud.com">      -->
+        
+        <div class="slds-grid slds-wrap"> 
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:input maxlength="40" name="first_name" size="20" label="First Name" id="first_name"/>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">First Name</label>
+                    <div class="slds-form-element__control">
+                        <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:input type="email" name="email" label="Email" maxlength="80" size="20"/>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">Email</label>
+                    <div class="slds-form-element__control">
+                        <input  id="email" maxlength="80" name="email" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:input maxlength="80" name="last_name" size="20" label="Last Name" id="last_name"/>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">Last Name</label>
+                    <div class="slds-form-element__control">
+                        <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:input type="tel" label="Phone" id="phone" maxlength="40" name="phone" size="20"/>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">Phone</label>
+                    <div class="slds-form-element__control">
+                        <input  id="phone" maxlength="40" name="phone" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:select id="00N5e00000Zc3Li" name="00N5e00000Zc3Li" label="Gender" >
+                    <option value=""></option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                </lightning:select>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="select-01">Gender</label>
+                    <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                        <select class="slds-select" id="00N5e00000Zc3Li" name="00N5e00000Zc3Li">
+                            <option value="">--None--</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:input type="tel" label="Mobile" id="mobile" maxlength="40" name="mobile" size="20"/>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">Mobile</label>
+                    <div class="slds-form-element__control">
+                        <input  id="mobile" maxlength="40" name="mobile" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:input maxlength="40" name="company" size="20" label="Company" id="company"/>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">Company</label>
+                    <div class="slds-form-element__control">
+                        <input  id="company" maxlength="40" name="company" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">Country</label>
+                    <div class="slds-form-element__control">
+                        <input  id="country" maxlength="40" name="country" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:input name="description" label="Description"/>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">Description</label>
+                    <div class="slds-form-element__control">
+                        <textarea name="description" class="slds-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">City</label>
+                    <div class="slds-form-element__control">
+                        <input  id="city" maxlength="40" name="city" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:input maxlength="40" name="state" size="20" label="State/Province" id="state"/>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">State/Province</label>
+                    <div class="slds-form-element__control">
+                        <input  id="state" maxlength="20" name="state" size="20" type="text" class="slds-input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!--<lightning:input name="street" label="Street"/>-->
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">Street</label>
+                    <div class="slds-form-element__control">
+                        <textarea name="street" class="slds-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="slds-align_absolute-center">
+            <input type="submit" name="submit" class="slds-button slds-button_brand"/>
+        </div>
+    </form>
+    
+</aura:component>

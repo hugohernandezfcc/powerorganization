@@ -1,0 +1,75 @@
+<!--
+  @description       : 
+  @author            : hugo.hernandez@openenglish.com
+  @group             : 
+  @last modified on  : 06-28-2021
+  @last modified by  : hugo.hernandez@openenglish.com
+  Modifications Log 
+  Ver   Date         Author                           Modification
+  1.0   06-23-2021   hugo.hernandez@openenglish.com   Initial Version
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="Warning">
+    <!-- attributes -->
+
+    <lightning:utilityBarAPI aura:id="utilitybar" />
+    <aura:attribute name="hasUtilityBar" type="Boolean" default="false" />
+    <aura:attribute name="enabledClictoDial" type="Boolean" default="false" />
+    
+    <aura:attribute name="recordId" type="String" />
+    <!-- event handlers -->
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:handler event="lightning:tabCreated" action="{! c.onTabCreated }"/>
+
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="DoNotCall"
+    recordUpdated="{!c.init}"
+    />
+
+    <aura:attribute name="phones" type="Map" />
+    <!-- <p>Is there a utility bar? { v.hasUtilityBar ? 'Yes' : 'No' }</p> -->
+
+
+    <aura:if isTrue="{!v.enabledClictoDial}">
+      <lightning:card  title="Phones">
+        <p class="slds-p-horizontal_small">
+          <aura:iteration items="{! v.phones }" var="phone">
+            <div class="slds-form-element">
+              <label class="slds-form-element__label" for="text-input-id-1">{!phone.label}</label>
+              <div class="slds-form-element__control">
+                <lightning:clickToDial value="{!phone.value}"/>
+              </div>
+            </div>
+            <br/>
+          </aura:iteration>
+        </p>
+      </lightning:card>
+      
+        <aura:set attribute="else">
+          <lightning:card  title="Phones">
+        
+              <p class="slds-p-horizontal_small">
+                <aura:iteration items="{! v.phones }" var="phone">
+
+                  <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-1">{!phone.label}</label>
+                    <div class="slds-form-element__control">
+                      <lightning:icon iconName="utility:end_call" alternativeText="Connected" size="xx-small"
+                      title="xx-small size" /> <ui:outputPhone aura:id="oPhone" value="{!phone.value}" />
+                    </div>
+                  </div>
+                  <br/>
+                </aura:iteration>
+              </p>
+          </lightning:card>
+          
+        </aura:set>
+    </aura:if>
+
+  
+
+    
+
+    
+
+</aura:component>
